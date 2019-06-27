@@ -20,10 +20,9 @@ for entrypoint in pkg_resources.iter_entry_points("interpret_ext_blackbox"):
         blackbox_ext_class = entrypoint.load()
 
         if getattr(current_module, blackbox_ext_class.__name__, None) is None and is_valid(blackbox_ext_class):
-
-
             setattr(current_module, blackbox_ext_class.__name__,
                     blackbox_ext_class)
+
     except Exception as e:
         module_logger.warning("Failure while loading {}. Failed to load entrypoint {} with exception {}.".format(
             blackbox_key, entrypoint, e))
