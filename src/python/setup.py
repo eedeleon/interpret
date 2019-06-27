@@ -82,6 +82,11 @@ setup(
     },
     setup_requires=[] + dev_tools,
     tests_require=[] + dev_tools,
+    entry_points={
+        "interpret_ext_blackbox": [
+            "key = interpret.ext.blackbox.demo:DemoExplainer"
+            ]
+    },
     install_requires=[
         # Algorithms
         "SALib>=1.3.3",
