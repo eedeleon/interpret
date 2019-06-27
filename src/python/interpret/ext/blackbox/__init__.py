@@ -6,10 +6,10 @@ module_logger = logging.getLogger(__name__)
 
 blackbox_key = "interpret_ext_blackbox"
 
-import pdb; pdb.set_trace()
 
 def is_valid(ext_class):
     return True
+
 
 for entrypoint in pkg_resources.iter_entry_points("interpret_ext_blackbox"):
     try:
@@ -17,7 +17,6 @@ for entrypoint in pkg_resources.iter_entry_points("interpret_ext_blackbox"):
         # How to get the current module
         # https://stackoverflow.com/questions/1676835
         current_module = sys.modules[__name__]
-        import pdb; pdb.set_trace()
         blackbox_ext_class = entrypoint.load()
 
         if getattr(current_module, blackbox_ext_class.__name__, None) is None and is_valid(blackbox_ext_class):
