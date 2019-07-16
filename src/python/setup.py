@@ -112,4 +112,9 @@ setup(
         "nbconvert>=5.4.1",
         "psutil>=5.6.2",
     ],
+    entry_points={
+        "interpret_ext_blackbox": [
+            "demo = interpret.ext.blackbox.thing:Thing"
+        ]
+    }
 )
