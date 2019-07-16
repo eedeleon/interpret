@@ -1,11 +1,12 @@
 # Copyright (c) 2019 Microsoft Corporation
 # Distributed under the MIT software license
 
-import sys
-from setuptools import setup, find_packages
+import io
 import os
 import re
-import io
+import sys
+
+from setuptools import setup, find_packages
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -48,7 +49,7 @@ setup(
     url="https://github.com/microsoft/interpret",
     packages=find_packages(),
     package_data={
-        "interpret": [
+        name: [
             "lib/ebmcore_win_x64.dll",
             "lib/ebmcore_linux_x64.so",
             "lib/ebmcore_mac_x64.dylib",
@@ -84,8 +85,8 @@ setup(
     tests_require=[] + dev_tools,
     entry_points={
         "interpret_ext_blackbox": [
-            "key = interpret.ext.blackbox.demo:DemoExplainer"
-            ]
+            "BlackboxExplainerExample = interpret.ext.blackbox.demo:DemoExplainer"
+        ]
     },
     install_requires=[
         # Algorithms

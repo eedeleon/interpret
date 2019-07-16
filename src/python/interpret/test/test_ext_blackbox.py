@@ -1,3 +1,7 @@
+import interpret.ext.blackbox
+
+
 def test_import_demo_explainer():
-    from interpret.ext.blackbox import DemoExplainer
-    print("Loaded {}".format(DemoExplainer.__name__))
+    print(dir(interpret.ext.blackbox))
+    from interpret.ext.blackbox import BlackboxExplainerExample
+    print("Loaded {}".format(BlackboxExplainerExample.__name__))
