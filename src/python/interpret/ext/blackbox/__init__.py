@@ -7,8 +7,6 @@ module_logger = logging.getLogger(__name__)
 
 BLACKBOX_EXTENSION_KEY = "interpret_ext_blackbox"
 
-__all__ = []
-
 
 def _is_valid_blackbox_explainer(proposed_blackbox_explainer):
     return True
@@ -18,4 +16,4 @@ def _is_valid_blackbox_explainer(proposed_blackbox_explainer):
 # https://stackoverflow.com/questions/1676835
 current_module = sys.modules[__name__]
 
-load_class_extensions(current_module, BLACKBOX_EXTENSION_KEY, _is_valid_blackbox_explainer, __all__)
+load_class_extensions(current_module, BLACKBOX_EXTENSION_KEY, _is_valid_blackbox_explainer)
