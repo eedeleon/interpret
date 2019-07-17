@@ -85,7 +85,7 @@ setup(
     tests_require=[] + dev_tools,
     entry_points={
         "interpret_ext_blackbox": [
-            "BlackboxExplainerExample = interpret.ext.blackbox.demo:DemoExplainer"
+            "BlackboxExplainerExample = interpret.ext.blackbox.example_blackbox_explainer_ext:ExampleExplainer"
         ]
     },
     install_requires=[
