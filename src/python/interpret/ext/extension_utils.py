@@ -17,8 +17,8 @@ def _validate_class_name(proposed_class_name):
     # regex for class name came from
     # https://stackoverflow.com/questions/10120295
     # TODO: Support other languages
-    match = re.match(r"[a-zA-Z\_][a-zA-Z^\.\_0-9]+", proposed_class_name)
-    if match is None:
+    match = re.match(r"[a-zA-Z_][a-zA-Z_0-9]+", proposed_class_name)
+    if match is None or match.group(0) != proposed_class_name:
         raise ValueError("Invalid class name {}. Class names must start with a "
                          " letter or underscore. And can continue with letters, "
                          "underscores, and integers".format(proposed_class_name))
